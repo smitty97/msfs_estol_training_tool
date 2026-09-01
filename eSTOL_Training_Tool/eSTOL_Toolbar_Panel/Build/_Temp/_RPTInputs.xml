@@ -1,0 +1,8 @@
+<RPTInputs>
+	<RPTInput Path="c:\users\smitty\source\repos\msfs_estol_training_tool\estol_training_tool\estol_toolbar_panel\build\PackageSources\estol-toolbar-panel.xml">
+		<Package Name="estol-toolbar-panel">
+			<AssetGroup Name="estol-toolbar-panel"/>
+		</Package>
+	</RPTInput>
+</RPTInputs>
+

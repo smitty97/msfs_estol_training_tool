@@ -132,6 +132,20 @@
     <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
+  <!-- On Release builds, bundle the built eSTOL_Toolbar_Panel MSFS Community
+       package (everything except its own Build\ subfolder, which is only
+       needed to compile the .spb - see eSTOL_Toolbar_Panel\README.md) into
+       the app's output folder, so a Release build carries the panel with it.
+       Skipped silently if the panel hasn't been built yet (no InGamePanels\*.spb). -->
+  <Target Name="CopyToolbarPanelPackage" AfterTargets="Build"
+          Condition="'$(Configuration)' == 'Release' AND Exists('..\eSTOL_Toolbar_Panel\InGamePanels\estol-toolbar-panel.spb')">
+    <ItemGroup>
+      <ToolbarPanelFiles Include="..\eSTOL_Toolbar_Panel\**\*.*" Exclude="..\eSTOL_Toolbar_Panel\Build\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ToolbarPanelFiles)"
+          DestinationFiles="@(ToolbarPanelFiles->'$(OutDir)eSTOL_Toolbar_Panel\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>

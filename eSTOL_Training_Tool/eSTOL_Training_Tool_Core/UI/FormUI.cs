@@ -959,7 +959,70 @@ namespace STOL_Training_Tool_Core.UI
 
         private void FormUI_Load(object sender, EventArgs e)
         {
+            RefreshPanelInstallStatus();
+        }
 
+        private MsfsInstallInfo panelInstallInfo = null;
+
+        private void RefreshPanelInstallStatus()
+        {
+            // Detection does registry/filesystem I/O - run it once (on load,
+            // and again right after an install), not on a timer.
+            panelInstallInfo = MsfsPanelInstall.FindMsfs2024Install();
+            string bundledVersion = MsfsPanelInstall.GetBundledPanelVersion();
+
+            if (panelInstallInfo == null)
+            {
+                labelPanelInstallStatus.Text = "MSFS 2024 not found";
+                buttonInstallPanel.Enabled = false;
+            }
+            else if (panelInstallInfo.CommunityPath == null)
+            {
+                labelPanelInstallStatus.Text = "Community folder not found";
+                buttonInstallPanel.Enabled = false;
+            }
+            else if (panelInstallInfo.InstalledPanelVersion == null)
+            {
+                labelPanelInstallStatus.Text = "Panel: not installed";
+                buttonInstallPanel.Enabled = true;
+            }
+            else if (bundledVersion != null && panelInstallInfo.InstalledPanelVersion != bundledVersion)
+            {
+                labelPanelInstallStatus.Text = $"Panel: v{panelInstallInfo.InstalledPanelVersion} -> v{bundledVersion}";
+                buttonInstallPanel.Enabled = true;
+            }
+            else
+            {
+                labelPanelInstallStatus.Text = $"Panel: v{panelInstallInfo.InstalledPanelVersion} (up to date)";
+                buttonInstallPanel.Enabled = false;
+            }
+        }
+
+        private void buttonInstallPanel_Click(object sender, EventArgs e)
+        {
+            if (panelInstallInfo?.CommunityPath == null) return;
+
+            var result = MessageBox.Show(
+                this,
+                $"Install/update the eSTOL toolbar panel to:\n\n{panelInstallInfo.CommunityPath}\n\nContinue?",
+                "Install MSFS Panel",
+                MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes) return;
+
+            try
+            {
+                MsfsPanelInstall.InstallPanel(panelInstallInfo.CommunityPath);
+                MessageBox.Show(
+                    this,
+                    $"Installed to:\n{panelInstallInfo.CommunityPath}\n\nRestart MSFS to see the change.",
+                    "Panel Installed");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, $"Couldn't install the panel:\n\n{ex.Message}", "Install Failed");
+            }
+
+            RefreshPanelInstallStatus();
         }
 
         private void buttonSetFuelStandard_Click(object sender, EventArgs e)

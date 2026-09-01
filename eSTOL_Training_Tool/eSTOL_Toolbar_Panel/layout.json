@@ -1,0 +1,49 @@
+{
+  "content": [
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/eSTOLTrainingPanel.css",
+      "size": 1352,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/eSTOLTrainingPanel.html",
+      "size": 1857,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/eSTOLTrainingPanel.js",
+      "size": 2273,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/panel.html",
+      "size": 3570,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/panel.js",
+      "size": 9045,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/panel.css",
+      "size": 3918,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/InGamePanels/eSTOLTrainingPanel/nationaleSTOL.svg",
+      "size": 124281,
+      "date": 133700000000000000
+    },
+    {
+      "path": "html_ui/icons/toolbar/icon_toolbar_estol_training.svg",
+      "size": 22094,
+      "date": 133700000000000000
+    },
+    {
+      "path": "InGamePanels/estol-toolbar-panel.spb",
+      "size": 900,
+      "date": 133700000000000000
+    }
+  ]
+}
