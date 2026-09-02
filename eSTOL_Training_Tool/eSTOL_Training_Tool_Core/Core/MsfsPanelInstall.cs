@@ -19,7 +19,7 @@ namespace STOL_Training_Tool_Core.Core
     /// Detects MSFS 2024 installs (Microsoft Store or Steam - 2020 is
     /// intentionally excluded, since the toolbar panel's html_ui/icons/
     /// path convention only works on the 2024 SDK) and installs/updates the
-    /// bundled eSTOL_Toolbar_Panel Community package into one.
+    /// bundled STOL_Training_Panel Community package into one.
     ///
     /// Detection mirrors the sibling VPforce-TelemFFB project's already
     /// field-verified msfs_panel_install.py:
@@ -35,7 +35,7 @@ namespace STOL_Training_Tool_Core.Core
     /// </summary>
     public static class MsfsPanelInstall
     {
-        private const string PanelFolderName = "eSTOL_Toolbar_Panel";
+        private const string PanelFolderName = "STOL_Training_Panel";
 
         private static readonly Regex InstalledPackagesPathRe =
             new Regex("InstalledPackagesPath\\s+\"([^\"]+)\"", RegexOptions.Compiled);
@@ -175,7 +175,7 @@ namespace STOL_Training_Tool_Core.Core
             return info;
         }
 
-        /// <summary>Copies the bundled panel into &lt;communityPath&gt;\eSTOL_Toolbar_Panel,
+        /// <summary>Copies the bundled panel into &lt;communityPath&gt;\STOL_Training_Panel,
         /// overwriting an existing install in place (used for both first
         /// install and updates). Excludes the Build\ subfolder, which is only
         /// needed to compile the .spb, not to run it.</summary>

@@ -1004,7 +1004,7 @@ namespace STOL_Training_Tool_Core.UI
 
             var result = MessageBox.Show(
                 this,
-                $"Install/update the eSTOL toolbar panel to:\n\n{panelInstallInfo.CommunityPath}\n\nContinue?",
+                $"Install/update the STOL toolbar panel to:\n\n{panelInstallInfo.CommunityPath}\n\nContinue?",
                 "Install MSFS Panel",
                 MessageBoxButtons.YesNo);
             if (result != DialogResult.Yes) return;

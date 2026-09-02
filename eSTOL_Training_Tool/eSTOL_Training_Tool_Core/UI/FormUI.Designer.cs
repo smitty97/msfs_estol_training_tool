@@ -619,7 +619,7 @@
             buttonInstallPanel.Size = new System.Drawing.Size(76, 22);
             buttonInstallPanel.TabIndex = 91;
             buttonInstallPanel.Text = "Install Panel";
-            toolTiphint.SetToolTip(buttonInstallPanel, "Install/update the eSTOL in-sim MSFS toolbar panel");
+            toolTiphint.SetToolTip(buttonInstallPanel, "Install/update the STOL in-sim MSFS toolbar panel");
             buttonInstallPanel.Click += buttonInstallPanel_Click;
             // 
             // buttonSetFuelStandard

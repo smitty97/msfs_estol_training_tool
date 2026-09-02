@@ -204,7 +204,7 @@ namespace STOL_Training_Tool_Core.Core
                 }
                 else if (path == "/" && method == "GET")
                 {
-                    await WriteAsync(ctx, $"eSTOL Panel Status Server running on {Host}:{Port}", "text/plain").ConfigureAwait(false);
+                    await WriteAsync(ctx, $"STOL Panel Status Server running on {Host}:{Port}", "text/plain").ConfigureAwait(false);
                 }
                 else
                 {
@@ -384,7 +384,7 @@ namespace STOL_Training_Tool_Core.Core
 <html>
 <head>
 <meta charset=""utf-8"" />
-<title>eSTOL Panel Test Mode</title>
+<title>STOL Panel Test Mode</title>
 <style>
   body { font-family: Segoe UI, sans-serif; background: #14181c; color: #f0f0f0; padding: 16px; }
   h1 { font-size: 18px; }
@@ -398,7 +398,7 @@ namespace STOL_Training_Tool_Core.Core
 </style>
 </head>
 <body>
-<h1>eSTOL Panel Test Mode</h1>
+<h1>STOL Panel Test Mode</h1>
 <p>Test mode: <span id=""modeLabel"">unknown</span> - open the real in-sim panel (or its panel.html directly) in another window to watch it react live.</p>
 
 <div class=""row"">

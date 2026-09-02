@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="Windows-1252"?>
-<SimBase.Document Type="InGamePanels" version="1,0">
-  <Filename>InGamePanel_eSTOLTrainingPanel.spb</Filename>
-  <InGamePanels.InGamePanelDefinition id="PANEL_ESTOL_TRAINING_V2" Name="eSTOL Scoring" url="html_UI/ingamePanels/eSTOLTrainingPanel/eSTOLTrainingPanel.html" resizeDirections="Both" minWidth="40" minHeight="42" defaultWidth="45" defaultHeight="60" defaultTop="20" defaultRight="2" icon="ICON_TOOLBAR_ESTOL_TRAINING" buttonVisible="true">
-  </InGamePanels.InGamePanelDefinition>
-</SimBase.Document>
